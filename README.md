@@ -1,0 +1,1 @@
+[![Build Status](https://app.travis-ci.com/himax82/job4j_grabber.svg?branch=main)](https://app.travis-ci.com/himax82/job4j_grabber)
