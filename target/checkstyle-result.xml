@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.29">
 </checkstyle>
+project\src\main\resources\log4j.properties">
+</file>
+<file name="C:\project\src\main\resources\rabbit.properties">
+</file>
+</checkstyle>
