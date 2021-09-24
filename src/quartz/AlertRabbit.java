@@ -17,7 +17,7 @@ import static org.quartz.SimpleScheduleBuilder.*;
 public class AlertRabbit {
     public static Connection cn;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         try (InputStream in = AlertRabbit.class.getClassLoader()
                 .getResourceAsStream("rabbit.properties")) {
             Properties config = new Properties();
@@ -35,18 +35,12 @@ public class AlertRabbit {
             JobDetail job = newJob(Rabbit.class)
                     .usingJobData(data)
                     .build();
-            SimpleScheduleBuilder times = simpleSchedule()
-                    .withIntervalInSeconds(load())
-                    .repeatForever();
             Trigger trigger = newTrigger()
                     .startNow()
-                    .withSchedule(times)
                     .build();
             scheduler.scheduleJob(job, trigger);
             Thread.sleep(10000);
             scheduler.shutdown();
-        } catch (Exception se) {
-            se.printStackTrace();
         }
     }
 
@@ -65,12 +59,12 @@ public class AlertRabbit {
 
     public static class Rabbit implements Job {
         @Override
-        public void execute(JobExecutionContext context) throws JobExecutionException {
+        public void execute(JobExecutionContext context) {
             try (PreparedStatement statement =
                          cn.prepareStatement("insert into rabbit(created_date) values (?);")) {
                 statement.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
                 statement.execute();
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
