@@ -36,7 +36,7 @@ public class AlertRabbit {
                     .usingJobData(data)
                     .build();
             SimpleScheduleBuilder times = simpleSchedule()
-                    .withIntervalInSeconds(1)
+                    .withIntervalInSeconds(load())
                     .repeatForever();
             Trigger trigger = newTrigger()
                     .startNow()
@@ -52,15 +52,11 @@ public class AlertRabbit {
 
     public static int load() {
         int rsl = 0;
-        try (BufferedReader read = new BufferedReader(
-                new FileReader("C:\\project\\src\\main\\resources\\rabbit.properties"))) {
-            String l;
-            while ((l = read.readLine()) != null) {
-                    String[] ar = l.split("=");
-                    if (ar[0].equals("rabbit.interval")) {
-                        rsl = Integer.parseInt(ar[1]);
-                    }
-                }
+        try (InputStream in = AlertRabbit.class.getClassLoader()
+                .getResourceAsStream("rabbit.properties")) {
+            Properties config = new Properties();
+            config.load(in);
+            rsl = Integer.parseInt(config.getProperty("rabbit.interval"));
         } catch (IOException e) {
             e.printStackTrace();
         }
