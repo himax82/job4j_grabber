@@ -29,7 +29,10 @@ public class SqlRuParse implements Parse {
         Elements row = doc.select(".postslisttopic");
         for (Element td : row) {
             Element href = td.child(0);
-            list.add(sqlRuParse.detail(href.attr("href")));
+            String linkJava = href.attr("href");
+            if (linkJava.contains(" Java ")) {
+                list.add(sqlRuParse.detail(href.attr("href")));
+            }
         }
         return list;
     }
