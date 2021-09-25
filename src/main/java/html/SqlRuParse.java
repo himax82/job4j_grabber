@@ -24,14 +24,13 @@ public class SqlRuParse implements Parse {
     @Override
     public List<Post> list(String link) throws IOException {
         List<Post> list = new ArrayList<>();
-        SqlRuParse sqlRuParse = new SqlRuParse(new SqlRuDateTimeParser());
         Document doc = Jsoup.connect(link).get();
         Elements row = doc.select(".postslisttopic");
         for (Element td : row) {
             Element href = td.child(0);
             String linkJava = href.attr("href");
             if (linkJava.contains(" Java ")) {
-                list.add(sqlRuParse.detail(href.attr("href")));
+                list.add(detail(href.attr("href")));
             }
         }
         return list;
