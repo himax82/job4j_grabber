@@ -101,7 +101,7 @@ public class PsqlStore implements Store, AutoCloseable {
             config.load(in);
             PsqlStore psqlStore = new PsqlStore(config);
             SqlRuParse sqlRuParse = new SqlRuParse(new SqlRuDateTimeParser());
-            String link = "https://www.sql.ru/forum/1338576/spb-programmist-sql-ot130tys-na-ruki";
+            String link = "https:/" + "/www.sql.ru/forum/1338576/spb-programmist-sql-ot130tys-na-ruki";
             psqlStore.save(sqlRuParse.detail(link));
         } catch (IOException | SQLException e) {
             e.printStackTrace();
