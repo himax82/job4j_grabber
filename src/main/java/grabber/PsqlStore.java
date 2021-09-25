@@ -48,13 +48,7 @@ public class PsqlStore implements Store, AutoCloseable {
         try (PreparedStatement statement = cnn.prepareStatement("select * from post")) {
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    posts.add(new Post(
-                            resultSet.getInt("id"),
-                            resultSet.getString("name"),
-                            resultSet.getString("text"),
-                            resultSet.getString("link"),
-                            resultSet.getTimestamp("created").toLocalDateTime()
-                    ));
+                    posts.add(getPostFromResultSet(resultSet));
                 }
             }
         } catch (Exception e) {
@@ -69,16 +63,9 @@ public class PsqlStore implements Store, AutoCloseable {
         try (PreparedStatement statement =
                      cnn.prepareStatement("select * from post where id = ?")) {
             statement.setInt(1, id);
-            statement.execute();
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    post = new Post(
-                            resultSet.getInt("id"),
-                            resultSet.getString("name"),
-                            resultSet.getString("text"),
-                            resultSet.getString("link"),
-                            resultSet.getTimestamp("created").toLocalDateTime()
-                    );
+                    post = getPostFromResultSet(resultSet);
                 }
             }
         } catch (Exception e) {
@@ -92,6 +79,16 @@ public class PsqlStore implements Store, AutoCloseable {
         if (cnn != null) {
             cnn.close();
         }
+    }
+
+    private Post getPostFromResultSet(ResultSet set) throws SQLException {
+        return new Post(
+                set.getInt("id"),
+                set.getString("name"),
+                set.getString("text"),
+                set.getString("link"),
+                set.getTimestamp("created").toLocalDateTime()
+        );
     }
 
     public static void main(String[] args) {
