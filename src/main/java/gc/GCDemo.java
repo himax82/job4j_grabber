@@ -19,7 +19,7 @@ public class GCDemo {
     public static void main(String[] args) {
         info();
         for (int i = 0; i < 100; i++) {
-            new User("1", 2,false);
+            new User("1", 2, false);
         }
         info();
     }
