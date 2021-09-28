@@ -9,6 +9,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 public class SqlRuParse {
+
     public static void main(String[] args) throws Exception {
         for (int i = 1; i <= 5; i++) {
             String url = "https://www.sql.ru/forum/job-offers/" + i;
@@ -25,9 +26,9 @@ public class SqlRuParse {
     }
     public static void parseUrl(Post post, String url) throws IOException {
         Document document = Jsoup.connect(url).get();
-        Elements rowDes = document.select("msgBody");
+        Elements rowDes = document.select(".msgBody");
         post.setDescription(rowDes.text());
-        Elements rowDate = document.select("msgFooter");
+        Elements rowDate = document.select(".msgFooter");
         post.setCreated(new SqlRuDateTimeParser().parse(rowDate.text()));
     }
 }
