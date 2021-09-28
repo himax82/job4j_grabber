@@ -30,30 +30,25 @@ public class SqlRuDateTimeParser implements DateTimeParser {
         int hour = 0;
         int minute = 0;
         String[] ar = parse.split(" ");
+        String[] time  = ar[ar.length - 1].split(":");
+        hour = Integer.parseInt(time[0]);
+        minute = Integer.parseInt(time[1]);
         if (ar[0].equals("сегодня,")) {
-            String[] time = ar[1].split(":");
-            hour = Integer.parseInt(time[0]);
-            minute = Integer.parseInt(time[1]);
             localDate = LocalDate.now();
             return localDate.atTime(hour, minute);
         }
         if (ar[0].equals("вчера,")) {
-            String[] time = ar[1].split(":");
-            hour = Integer.parseInt(time[0]);
-            minute = Integer.parseInt(time[1]);
             localDate = LocalDate.now().minusDays(1);
             return localDate.atTime(hour, minute);
         }
         day = Integer.parseInt(ar[0]);
-        for (String s : MONTHS.keySet()) {
-            if (s.equals(ar[1])) {
-                month = MONTHS.get(s);
-            }
-        }
-        year = Integer.parseInt(ar[2].substring(0, 1));
-        String[] time = ar[4].split(":");
-        hour = Integer.parseInt(time[0]);
-        minute = Integer.parseInt(time[1]);
+        month = MONTHS.get(ar[1]);
+        year = Integer.parseInt(ar[2].substring(0, 2)) + 2000;
         return LocalDateTime.of(year, month, day, hour, minute);
+    }
+
+    public static void main(String[] args) {
+        String date = "2 дек 19, 22:29";
+        System.out.println(new SqlRuDateTimeParser().parse(date));
     }
 }
