@@ -29,4 +29,12 @@ public class SqlRuDateTimeParserTest {
         SqlRuDateTimeParser sql = new SqlRuDateTimeParser();
         assertTrue(localDateTime.isEqual(sql.parse(date)));
     }
+
+    @Test
+    public void whenFalseDate() {
+        String date = "3 мар 18, 13:09";
+        LocalDateTime localDateTime = LocalDateTime.of(2018, 3, 3, 13, 29);
+        SqlRuDateTimeParser sql = new SqlRuDateTimeParser();
+        assertFalse(localDateTime.isEqual(sql.parse(date)));
+    }
 }
