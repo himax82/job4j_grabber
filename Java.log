@@ -1,0 +1,72 @@
+[2021/10/06 12:39:55.598, java.exe (PID: 5644, TID: 11252), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2021/10/06 12:39:55.613, java.exe (PID: 5644, TID: 11252), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={75CDB88B-F917-5456-AB2D-5504DE7F43DE}; type=1
+[2021/10/06 12:39:55.613, java.exe (PID: 5644, TID: 11252), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:39:55.614, java.exe (PID: 5644, TID: 11252), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:39:55.615, java.exe (PID: 5644, TID: 11252), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({75CDB88B-F917-5456-AB2D-5504DE7F43DE})
+[2021/10/06 12:39:55.634, java.exe (PID: 5644, TID: 11252), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(16.0.1+9|16.0.1+9|JDK|64bit|C:\Program Files\Java\jdk-16.0.1|{75CDB88B-F917-5456-AB2D-5504DE7F43DE}|-10|)
+[2021/10/06 12:39:55.638, java.exe (PID: 5644, TID: 11252), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2021/10/06 12:39:55.646, java.exe (PID: 5644, TID: 11252), Executor.cpp:599 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-16.0.1\bin\java.exe, "C:\Program Files\Java\jdk-16.0.1\bin\java.exe" -classpath C:\tools\apache-maven-3.8.3\boot\plexus-classworlds-2.6.0.jar -Dclassworlds.conf=C:\tools\apache-maven-3.8.3\bin\m2.conf -Dmaven.home=C:\tools\apache-maven-3.8.3 -Dlibrary.jansi.path=C:\tools\apache-maven-3.8.3\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\tools\apache-maven-3.8.3\bin org.codehaus.plexus.classworlds.launcher.Launcher --version) succeeded; PID=5592
+[2021/10/06 12:39:57.579, java.exe (PID: 5644, TID: 11252), Executor.cpp:560 (Executor2::execAndWait)]
+	TRACE: Process with PID=5592 terminated. Exit code=0
+[2021/10/06 12:47:11.310, java.exe (PID: 1684, TID: 4516), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2021/10/06 12:47:11.322, java.exe (PID: 1684, TID: 4516), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={75CDB88B-F917-5456-AB2D-5504DE7F43DE}; type=1
+[2021/10/06 12:47:11.323, java.exe (PID: 1684, TID: 4516), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:47:11.323, java.exe (PID: 1684, TID: 4516), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:47:11.324, java.exe (PID: 1684, TID: 4516), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({75CDB88B-F917-5456-AB2D-5504DE7F43DE})
+[2021/10/06 12:47:11.328, java.exe (PID: 1684, TID: 4516), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(16.0.1+9|16.0.1+9|JDK|64bit|C:\Program Files\Java\jdk-16.0.1|{75CDB88B-F917-5456-AB2D-5504DE7F43DE}|-10|)
+[2021/10/06 12:47:11.331, java.exe (PID: 1684, TID: 4516), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2021/10/06 12:47:11.338, java.exe (PID: 1684, TID: 4516), Executor.cpp:599 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-16.0.1\bin\java.exe, "C:\Program Files\Java\jdk-16.0.1\bin\java.exe" --version) succeeded; PID=5768
+[2021/10/06 12:47:11.407, java.exe (PID: 1684, TID: 4516), Executor.cpp:560 (Executor2::execAndWait)]
+	TRACE: Process with PID=5768 terminated. Exit code=0
+[2021/10/06 12:47:22.421, javac.exe (PID: 6224, TID: 10480), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2021/10/06 12:47:22.433, javac.exe (PID: 6224, TID: 10480), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={75CDB88B-F917-5456-AB2D-5504DE7F43DE}; type=1
+[2021/10/06 12:47:22.434, javac.exe (PID: 6224, TID: 10480), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:47:22.434, javac.exe (PID: 6224, TID: 10480), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:47:22.434, javac.exe (PID: 6224, TID: 10480), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({75CDB88B-F917-5456-AB2D-5504DE7F43DE})
+[2021/10/06 12:47:22.439, javac.exe (PID: 6224, TID: 10480), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(16.0.1+9|16.0.1+9|JDK|64bit|C:\Program Files\Java\jdk-16.0.1|{75CDB88B-F917-5456-AB2D-5504DE7F43DE}|-10|)
+[2021/10/06 12:47:22.442, javac.exe (PID: 6224, TID: 10480), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2021/10/06 12:47:22.453, javac.exe (PID: 6224, TID: 10480), Executor.cpp:599 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-16.0.1\bin\javac.exe, "C:\Program Files\Java\jdk-16.0.1\bin\javac.exe" --version) succeeded; PID=2604
+[2021/10/06 12:47:22.641, javac.exe (PID: 6224, TID: 10480), Executor.cpp:560 (Executor2::execAndWait)]
+	TRACE: Process with PID=2604 terminated. Exit code=0
+[2021/10/06 12:47:35.685, java.exe (PID: 3692, TID: 2520), JavaEnvironment.cpp:502 (JavaEnvironment::detect)]
+	TRACE: Entering JavaEnvironment::detect
+[2021/10/06 12:47:35.697, java.exe (PID: 3692, TID: 2520), JavaEnvironment.cpp:519 (JavaEnvironment::detect)]
+	TRACE: Installed Java detected: version=; arch=64; productCode={75CDB88B-F917-5456-AB2D-5504DE7F43DE}; type=1
+[2021/10/06 12:47:35.698, java.exe (PID: 3692, TID: 2520), JavaEnvironment.cpp:135 (`anonymous-namespace'::detectHomeDir)]
+	TRACE: Find home dir of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:47:35.698, java.exe (PID: 3692, TID: 2520), JavaEnvironment.cpp:302 (`anonymous-namespace'::detectFullVersion)]
+	TRACE: Detect full version of {75CDB88B-F917-5456-AB2D-5504DE7F43DE} Java installation
+[2021/10/06 12:47:35.698, java.exe (PID: 3692, TID: 2520), JavaEnvironment.cpp:213 (`anonymous-namespace'::detectFullVersionFromMsi)]
+	TRACE: detectFullVersionFromMsi({75CDB88B-F917-5456-AB2D-5504DE7F43DE})
+[2021/10/06 12:47:35.703, java.exe (PID: 3692, TID: 2520), JavaEnvironment.cpp:481 (`anonymous-namespace'::getInstalledJava)]
+	TRACE: InstalledJava(16.0.1+9|16.0.1+9|JDK|64bit|C:\Program Files\Java\jdk-16.0.1|{75CDB88B-F917-5456-AB2D-5504DE7F43DE}|-10|)
+[2021/10/06 12:47:35.706, java.exe (PID: 3692, TID: 2520), JavaEnvironment.cpp:0 (JavaEnvironment::detect)]
+	TRACE: Exiting JavaEnvironment::detect (entered at JavaEnvironment.cpp:502)
+[2021/10/06 12:47:35.713, java.exe (PID: 3692, TID: 2520), Executor.cpp:599 (Executor2::startProcess)]
+	TRACE: CreateProcess(C:\Program Files\Java\jdk-16.0.1\bin\java.exe, "C:\Program Files\Java\jdk-16.0.1\bin\java.exe" -classpath C:\tools\apache-maven-3.8.3\boot\plexus-classworlds-2.6.0.jar -Dclassworlds.conf=C:\tools\apache-maven-3.8.3\bin\m2.conf -Dmaven.home=C:\tools\apache-maven-3.8.3 -Dlibrary.jansi.path=C:\tools\apache-maven-3.8.3\lib\jansi-native -Dmaven.multiModuleProjectDirectory=C:\tools\apache-maven-3.8.3\bin org.codehaus.plexus.classworlds.launcher.Launcher --version) succeeded; PID=10432
+[2021/10/06 12:47:35.964, java.exe (PID: 3692, TID: 2520), Executor.cpp:560 (Executor2::execAndWait)]
+	TRACE: Process with PID=10432 terminated. Exit code=0
