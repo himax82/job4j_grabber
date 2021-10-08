@@ -2,7 +2,7 @@ package template;
 
 import java.util.Map;
 
-public class GeneratorString implements Generator{
+public class GeneratorString implements Generator {
     @Override
     public String produce(String template, Map<String, String> args) {
         return null;
