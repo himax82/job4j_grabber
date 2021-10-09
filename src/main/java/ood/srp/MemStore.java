@@ -1,13 +1,30 @@
 package ood.srp;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@XmlRootElement(name = "employees")
 public class MemStore implements Store {
 
-    private final List<Employee> employees = new ArrayList<>();
+    private List<Employee> employees = new ArrayList<>();
+
+    public MemStore() {
+    }
+
+    public MemStore(List<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 
     public void add(Employee em) {
 
