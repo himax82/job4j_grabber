@@ -24,16 +24,8 @@ public class Zip {
         }
     }
 
-    public static void packSingleFile(File source, File target) {
-        try (ZipOutputStream zip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(target)))) {
-            zip.putNextEntry(new ZipEntry(source.getPath()));
-            try (BufferedInputStream out = new BufferedInputStream(new FileInputStream(source))) {
-                zip.write(out.readAllBytes());
-                zip.closeEntry();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public static void unpackFile(File source, File target) {
+
     }
 
     public static boolean validate(Map<String, String> map) {
