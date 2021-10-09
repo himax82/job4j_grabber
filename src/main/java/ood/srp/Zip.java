@@ -24,7 +24,7 @@ public class Zip {
         }
     }
 
-    public static void unpackFile(File source, File target) {
+    public static void unpackTarFile(File source, File target) {
 
     }
 
