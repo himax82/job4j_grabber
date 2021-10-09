@@ -16,9 +16,9 @@ public class MiddleJava {
         }
     }
 
-    class seniorJava extends MiddleJava {
+    class SeniorJava extends MiddleJava {
 
-        public seniorJava(int salary) {
+        public SeniorJava(int salary) {
             super(salary);
         }
 
