@@ -5,6 +5,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -22,7 +23,7 @@ public class GeneratorTest {
     }
 
     @Ignore
-    @Test(expected = RuntimeException.class)
+    @Test(expected = NoSuchElementException.class)
     public void whenNotFoundKeyOnMap() {
         String first = "I am a ${surname}, Who are ${subject}? ";
         String result = "I am a Max, Who are happy? ";
@@ -32,7 +33,7 @@ public class GeneratorTest {
     }
 
     @Ignore
-    @Test(expected = RuntimeException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void whenFoundUnnecessaryKeyOnMap() {
         String first = "I am a ${surname}, Who are ${subject}? ";
         String result = "I am a Max, Who are happy? ";
