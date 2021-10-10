@@ -2,6 +2,7 @@ package ood.srp;
 
 import org.junit.Test;
 
+import javax.xml.bind.JAXBException;
 import java.util.Calendar;
 
 import static org.hamcrest.Matchers.is;
@@ -10,7 +11,7 @@ import static org.junit.Assert.*;
 public class ReportHRTest {
 
     @Test
-    public void whenGeneratedHRReport() {
+    public void whenGeneratedHRReport() throws JAXBException {
         MemStore store = new MemStore();
         Calendar now = Calendar.getInstance();
         Employee worker1 = new Employee("Max", now, now, 100);
