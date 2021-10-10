@@ -1,6 +1,11 @@
 package ood.lsp;
 
-public interface Service {
+public class Service {
 
-    void addCar();
+    private Parking parking;
+
+    public Service(Parking parking) {
+        this.parking = parking;
+    }
+
 }
