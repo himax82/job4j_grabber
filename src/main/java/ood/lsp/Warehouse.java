@@ -21,4 +21,13 @@ public class Warehouse implements Storage {
             list.add(products);
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (Products p : list) {
+            s.append(p.toString());
+        }
+        return "Warehouse{" + "list=" + s + '}';
+    }
 }

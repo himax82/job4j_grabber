@@ -58,4 +58,13 @@ public class Fish implements Products {
     public void setDiscount(double discount) {
         this.discount = discount;
     }
+
+    @Override
+    public String toString() {
+        return "Fish{" + "fishName='" + fishName + '\''
+                + ", expiryDate=" + expiryDate
+                + ", dateOfCatch=" + dateOfCatch
+                + ", price=" + price
+                + ", discount=" + discount + '}';
+    }
 }

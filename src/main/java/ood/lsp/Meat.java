@@ -59,4 +59,12 @@ public class Meat implements Products {
     public void setDiscount(double discount) {
         this.discount = discount;
     }
+
+    @Override
+    public String toString() {
+        return "Meat{" + "kindOfMeat='" + kindOfMeat + '\''
+                + ", expiryDate=" + expiryDate + ", slaughterDate="
+                + slaughterDate + ", price=" + price
+                + ", discount=" + discount + '}';
+    }
 }

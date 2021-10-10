@@ -19,9 +19,7 @@ public class ControllQuality {
 
     public void inputStorage() {
         for (Storage s : list) {
-            for (Products p : s.getList()) {
-                System.out.println(p);
-            }
+                System.out.println(s);
         }
     }
 

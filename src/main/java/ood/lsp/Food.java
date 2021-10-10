@@ -59,4 +59,13 @@ public class Food implements Products {
     public void setDiscount(double discount) {
         this.discount = discount;
     }
+
+    @Override
+    public String toString() {
+        return "Food{" + "name='" + name + '\''
+                + ", expiryDate=" + expiryDate
+                + ", createDate=" + createDate
+                + ", price=" + price
+                + ", discount=" + discount + '}';
+    }
 }
