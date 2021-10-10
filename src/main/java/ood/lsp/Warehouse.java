@@ -17,6 +17,8 @@ public class Warehouse implements Storage {
 
     @Override
     public void add(Products products) {
-        list.add(products);
+        if (ShelfLife.daysCoef(products.getExpiryDate(), products.getCreateDate()) < 0.25) {
+            list.add(products);
+        }
     }
 }

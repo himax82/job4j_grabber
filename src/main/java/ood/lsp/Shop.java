@@ -17,6 +17,12 @@ public class Shop implements Storage {
 
     @Override
     public void add(Products products) {
-        list.add(products);
+        double coef = ShelfLife.daysCoef(products.getExpiryDate(), products.getCreateDate());
+        if (coef >= 0.25 && coef < 0.75) {
+            list.add(products);
+        } else if (coef >= 0.75 && coef < 1) {
+            products.setPrice(products.getPrice() * products.getDiscount());
+            list.add(products);
+        }
     }
 }

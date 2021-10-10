@@ -17,6 +17,8 @@ public class Trash implements Storage {
 
     @Override
     public void add(Products products) {
-        list.add(products);
+        if (ShelfLife.daysCoef(products.getExpiryDate(), products.getCreateDate()) >= 1) {
+            list.add(products);
+        }
     }
 }
