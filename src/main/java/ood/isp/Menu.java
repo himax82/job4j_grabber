@@ -14,37 +14,45 @@ public class Menu {
 
     public void init() {
         for (Element e : list) {
-            e.print();
+            System.out.println(e);
         }
+    }
+
+    public Element search(String name) {
+        Element result;
+            for (Element e : list) {
+                result = e.search(name);
+                if (result != null) {
+                    return result;
+                }
+            }
+        return null;
+    }
+
+    public void addChild(String parentName, String childName, Action action) {
+        Element elementParent = search(parentName);
+        elementParent.add(new ElementFirst(childName, action));
+    }
+
+    public Action findAction(String name) {
+        return search(name).getAction();
     }
 
     public static void main(String[] args) {
         Menu menu = new Menu(new ArrayList<>());
-        Element element1 = new ElementFirst("Задача 1");
-        Element element2 = new ElementFirst("Задача 2");
-        Element element11 = new ElementFirst("Задача 1.1");
-        element1.add(element11);
-        Element element111 = new ElementFirst("Задача 1.1.1");
-        element11.add(element111);
-        Element element112 = new ElementFirst("Задача 1.1.2");
-        element11.add(element112);
-        Element element12 = new ElementFirst("Задача 1.2");
-        element1.add(element12);
-        Element element13 = new ElementFirst("Задача 1.3");
-        element1.add(element13);
+        Element element1 = new ElementFirst("Задача 1", new ActionFirst());
+        Element element2 = new ElementFirst("Задача 2", new ActionFirst());
         menu.list.add(element1);
         menu.list.add(element2);
+        menu.addChild("Задача 1", "Задача 1.1", new ActionFirst());
+        menu.addChild("Задача 1.1", "Задача 1.1.1", new ActionFirst());
+        menu.addChild("Задача 1.1", "Задача 1.1.2", new ActionFirst());
+        menu.addChild("Задача 1", "Задача 1.2", new ActionFirst());
+        menu.addChild("Задача 1", "Задача 1.3", new ActionFirst());
         menu.init();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите номер пункта: ");
+        System.out.println("Введите название пункта который хотите запустить: ");
         String s = scanner.nextLine();
-        String[] ar = s.split("\\.");
-        List<Element> e = menu.list;
-        Element element = null;
-        for (String st : ar) {
-             element = e.get(Integer.parseInt(st) - 1);
-             e = element.getList();
-        }
-        element.run();
+        menu.findAction(s).run();
     }
 }

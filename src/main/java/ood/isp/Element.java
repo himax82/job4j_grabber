@@ -4,8 +4,9 @@ import java.util.List;
 
 public interface Element {
 
-    void print();
-    void run();
     void add(Element element);
     List<Element> getList();
+    Element search(String name);
+    Action getAction();
+
 }
