@@ -2,14 +2,14 @@ package ood.lsp;
 
 public class Truck implements Car {
 
-    private double size;
+    private int size;
 
-    public Truck(double size) {
+    public Truck(int size) {
         this.size = size;
     }
 
     @Override
-    public double getSize() {
+    public int getSize() {
         return size;
     }
 }

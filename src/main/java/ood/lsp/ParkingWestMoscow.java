@@ -27,8 +27,8 @@ public class ParkingWestMoscow implements Parking {
             if (bigCar.size() < lengthBig) {
                 bigCar.add(car);
                 return true;
-            } else if ((lengthSmall - smallCar.size()) > Math.ceil(car.getSize())) {
-                for (int i = 0; i < (int) Math.ceil(car.getSize()); i++) {
+            } else if ((lengthSmall - smallCar.size()) > car.getSize()) {
+                for (int i = 0; i < car.getSize(); i++) {
                     smallCar.add(car);
                 }
                 return true;
