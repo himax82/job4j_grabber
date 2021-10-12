@@ -31,7 +31,7 @@ public class ControllQuality implements Job {
         for (Storage s : list) {
             listProducts.addAll(s.getList());
         }
-        list = List.of(new Warehouse(), new Trash(), new Shop());
+        list.clear();
         for (Products p : listProducts) {
             put(p);
         }
