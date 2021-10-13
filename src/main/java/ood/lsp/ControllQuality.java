@@ -30,8 +30,8 @@ public class ControllQuality implements Job {
         List<Products> listProducts = new ArrayList<>();
         for (Storage s : list) {
             listProducts.addAll(s.getList());
+            s.getList().clear();
         }
-        list.clear();
         for (Products p : listProducts) {
             put(p);
         }
